@@ -29,7 +29,7 @@ int main() {
     listen(server_sock, 5);
 
     printf("Server listening on port 8080\n");
-
+    client_len = sizeof(client_addr);
     while ((client_sock = accept(server_sock, (struct sockaddr *) &client_addr, &client_len)) > 0) {
         handle_client(client_sock);
     }
